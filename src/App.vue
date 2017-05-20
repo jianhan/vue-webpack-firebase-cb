@@ -6,11 +6,10 @@
 </template>
 
 <script>
+
 export default {
-  name: 'app'
+    name: 'app',
+    mounted () {
+    }
 }
 </script>
-
-<style lang="less">
-    @import "assets/less/main.less";
-</style>
