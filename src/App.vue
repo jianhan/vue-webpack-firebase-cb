@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import db from '@/configs/firebase'
+
 export default {
     name: 'app',
     mounted(){
-        console.log(db)
+        this.$store.dispatch('setAuthenticatedUser')
     }
 }
 </script>
