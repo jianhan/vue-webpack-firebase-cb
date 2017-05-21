@@ -5,8 +5,11 @@
 </template>
 
 <script>
-
+import db from '@/configs/firebase'
 export default {
-    name: 'app'
+    name: 'app',
+    mounted(){
+        console.log(db)
+    }
 }
 </script>
