@@ -20,10 +20,9 @@
                             <!-- Login Title -->
                             <h1 class="h2 font-w600 push-30-t push-5">OneUI</h1>
                             <p>Welcome, please login.</p>
-
                             <div class="alert alert-warning alert-dismissable" v-if="hasError">
                                 <button @click="clearError" type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <p><i class="fa fa-warning"></i> {{ error.message  }}</p>
+                                <p><i class="fa fa-warning"></i> {{ error.message }}</p>
                             </div>
 
                             <!-- END Login Title -->
@@ -96,6 +95,13 @@
             }
         },
         mounted(){
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    this.$store.commit(types.SET_AUTHENTICATED_USER, {
+                        authenticatedUser: user
+                    })
+                }
+            })
         },
         methods: {
              clearError() {
