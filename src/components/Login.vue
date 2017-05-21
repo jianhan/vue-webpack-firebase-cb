@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
     import { fbApp  } from '@/configs/firebase'
     import firebase from 'firebase'
     import * as types from '@/store/mutation-types'
