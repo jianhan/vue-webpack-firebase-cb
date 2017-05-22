@@ -1,3 +1,4 @@
 export default {
-    authenticatedUser: null
+    authenticatedUser: null,
+    flashMessage: null
 }

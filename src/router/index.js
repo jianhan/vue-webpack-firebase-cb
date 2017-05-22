@@ -6,6 +6,7 @@ import AdminLayout from '@/components/AdminLayout'
 import AddCourse from '@/components/AddCourse'
 import store from '@/store'
 import firebase from 'firebase'
+import FlashMessage from '@/classes/FlashMessage'
 
 Vue.use(Router)
 
@@ -47,6 +48,7 @@ router.beforeEach((to, from, next) => {
                 next()
             }
             else{
+                store.commit('SET_FLASH_MESSAGE', { flashMessage: new FlashMessage('warning', 'Please login.') })
                 next({ path: '/login' })
             }
         })
