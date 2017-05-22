@@ -13,19 +13,12 @@
                             Blank <small>That feeling of delight when you start your awesome new project!</small>
                         </h1>
                     </div>
-                    <div class="col-sm-5 text-right hidden-xs">
-                        <ol class="breadcrumb push-10-t">
-                            <li>Generic</li>
-                            <li><a class="link-effect" href="">Blank</a></li>
-                        </ol>
-                    </div>
                 </div>
             </div>
             <!-- END Page Header -->
             <!-- Page Content -->
             <div class="content">
-                <h2 class="content-heading">Your content</h2>
-                <p>...</p>
+                <router-view></router-view>
             </div>
             <!-- END Page Content -->
         </main>

@@ -2,8 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import store from './store'
+import router from './router'
+
 // Use vuefire
 import VueFire from 'vuefire'
 Vue.use(VueFire)
@@ -26,9 +27,9 @@ import oneuiCss from './assets/css/oneui.css'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    store,
+    router,
+    template: '<App/>',
+    components: { App },
 })

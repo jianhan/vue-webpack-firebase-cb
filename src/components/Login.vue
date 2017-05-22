@@ -95,13 +95,7 @@
             }
         },
         mounted(){
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    this.$store.commit(types.SET_AUTHENTICATED_USER, {
-                        authenticatedUser: user
-                    })
-                }
-            })
+            
         },
         methods: {
              clearError() {
@@ -111,13 +105,7 @@
                 var user = firebase.auth().currentUser;
                 console.log(user)
              },
-            logout(){
-                let vm = this
-                firebase.auth().signOut().then(function() {
-                    vm.$store.commit(types.UNSET_AUTHENTICATED_USER)
-                }).catch(function(error) {
-                })
-             },
+            
             login(){
                 let vm = this
                 vm.clearError()
