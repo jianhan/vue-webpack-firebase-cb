@@ -58,7 +58,9 @@
                 <div class="side-content">
                     <ul class="nav-main">
                         <li>
-                            <a href="base_pages_dashboard.html"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                            <a href="base_pages_dashboard.html">
+                                <i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span>
+                            </a>
                         </li>
                         <li class="nav-main-heading"><span class="sidebar-mini-hide">Courses Management</span></li>
                         <li>

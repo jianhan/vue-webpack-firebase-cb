@@ -68,9 +68,10 @@
                 let vm = this
                 firebase.auth().signOut().then(function() {
                     vm.$store.commit(types.UNSET_AUTHENTICATED_USER)
+                    store.commit('SET_FLASH_MESSAGE', { flashMessage: new FlashMessage('warning', 'Please login........') })
                     vm.$router.push({ name: 'login' })
                 }).catch(function(error) {
-                    
+
                 })
              }
         }
