@@ -3,8 +3,9 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import AdminLayout from '@/components/AdminLayout'
-import AddCourse from '@/components/AddCourse'
-import Dashboard from '@/components/AdminDashboard'
+import AdminAddCourse from '@/components/AdminAddCourse'
+import AdminDashboard from '@/components/AdminDashboard'
+import AdminListCourses from '@/components/AdminListCourses'
 import store from '@/store'
 import firebase from 'firebase'
 import FlashMessage from '@/classes/FlashMessage'
@@ -30,13 +31,18 @@ const router = new Router({
             component: AdminLayout,
             children: [
                 {
+                    path: 'list-course',
+                    component: AdminListCourses,
+                    name: 'admin.list-courses'
+                },
+                {
                     path: 'add-course',
-                    component: AddCourse,
+                    component: AdminAddCourse,
                     name: 'admin.add-course'
                 },
                 {
                     path: 'dashboard',
-                    component: Dashboard,
+                    component: AdminDashboard,
                     name: 'admin.dashboard'
                 }
             ]

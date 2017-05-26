@@ -58,15 +58,15 @@
                 <div class="side-content">
                     <ul class="nav-main">
                         <li>
-                            <a href="base_pages_dashboard.html">
+                            <router-link :to="{ name: 'admin.dashboard'}" active-class='active'>
                                 <i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="nav-main-heading"><span class="sidebar-mini-hide">Courses Management</span></li>
                         <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
-                                <i class="si si-badge"></i><span class="sidebar-mini-hide">Courses</span>
-                            </a>
+                            <router-link :to="{ name: 'admin.list-courses'}" active-class='active'>
+                                <i class="si si-badge"></i><span class="sidebar-mini-hide">List Courses</span>
+                            </router-link>
                             <ul>
                                 <li>
                                     <a href="base_ui_grid.html">All Courses</a>

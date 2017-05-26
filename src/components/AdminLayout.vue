@@ -25,7 +25,6 @@
         <!-- END Main Container -->
         <admin-footer />
     </div>
-    <!-- END Page Container -->
 </template>
 
 <script>
