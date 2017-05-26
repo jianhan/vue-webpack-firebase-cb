@@ -11,8 +11,7 @@ export default {
     mounted(){
         this.$store.dispatch('setAuthenticatedUser') 
     },
-methods: {
-    test(){alert(23)}
-         }
+    methods: {
+    }
 }
 </script>

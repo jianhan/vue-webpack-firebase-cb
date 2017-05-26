@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import AdminLayout from '@/components/AdminLayout'
 import AddCourse from '@/components/AddCourse'
+import Dashboard from '@/components/AdminDashboard'
 import store from '@/store'
 import firebase from 'firebase'
 import FlashMessage from '@/classes/FlashMessage'
@@ -31,7 +32,12 @@ const router = new Router({
                 {
                     path: 'add-course',
                     component: AddCourse,
-                    name: 'add-course'
+                    name: 'admin.add-course'
+                },
+                {
+                    path: 'dashboard',
+                    component: Dashboard,
+                    name: 'admin.dashboard'
                 }
             ]
         }

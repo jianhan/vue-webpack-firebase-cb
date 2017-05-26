@@ -78,6 +78,7 @@
     import * as types from '@/store/mutation-types'
     import basePagesLogin from '@/assets/js/pages/base_pages_login.js'
     import _ from 'lodash'
+    import { mapActions } from 'vuex'
     require('jquery-validation')
 
     export default {
@@ -101,11 +102,6 @@
              clearError() {
                 this.error = {}
              },
-             getUser(){
-                var user = firebase.auth().currentUser;
-                console.log(user)
-             },
-            
             login(){
                 let vm = this
                 vm.clearError()
@@ -116,6 +112,7 @@
                     vm.isLoading = true
                     firebase.auth().signInWithEmailAndPassword(vm.email, vm.password).then(result => {
                         vm.isLoading = false
+                        vm.$router.push({ name: 'admin.dashboard' })
                     })
                     .catch(function(error) {
                         vm.error = error
