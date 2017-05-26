@@ -18,6 +18,7 @@
                         </div>
                         <div class="block-content block-content-full block-content-narrow">
                             <!-- Login Title -->
+                            <flash-message />
                             <h1 class="h2 font-w600 push-30-t push-5">OneUI</h1>
                             <p>Welcome, please login.</p>
                             <div class="alert alert-warning alert-dismissable" v-if="hasError">
@@ -141,6 +142,3 @@
         }
     }
 </script>
-
-<style>
-</style>

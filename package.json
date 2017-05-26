@@ -22,7 +22,10 @@
     "vuefire": "^1.4.2",
     "vuex": "^2.3.1",
     "vuex-persistedstate": "^1.4.1",
-    "vuexfire": "^2.1.2"
+    "vuexfire": "^2.1.2",
+    "webpack-preset": "^0.2.0",
+    "webpack-preset-babel": "^0.2.0",
+    "webpack-preset-babel-stage-3": "^0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

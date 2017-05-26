@@ -25,6 +25,10 @@ import appJs from './assets/js/app.js'
 import bootstrapCss from './assets/css/bootstrap.min.css'
 import oneuiCss from './assets/css/oneui.css'
 
+// setup global components
+import FlashMessage from './components/FlashMessage'
+Vue.component('flash-message',FlashMessage)
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
