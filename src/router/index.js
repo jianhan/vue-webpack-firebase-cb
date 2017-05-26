@@ -8,6 +8,7 @@ import Dashboard from '@/components/AdminDashboard'
 import store from '@/store'
 import firebase from 'firebase'
 import FlashMessage from '@/classes/FlashMessage'
+import * as Cookies from 'js-cookie'
 
 Vue.use(Router)
 
@@ -48,16 +49,15 @@ router.beforeEach((to, from, next) => {
     // the idea situation is get from store, but it is very difficult to do so
     if(to.fullPath.startsWith('/admin'))
     {
-        firebase.auth().onAuthStateChanged(function(user) {
-            // user has logged in
-            if (user) {
-                next()
-            }
-            else{
-                store.commit('SET_FLASH_MESSAGE', { flashMessage: new FlashMessage('warning', 'Please login.') })
-                next({ path: '/login' })
-            }
-        })
+        if(typeof Cookies.get('authenticatedUser') === 'undefined')
+        {
+            store.commit('SET_FLASH_MESSAGE', { flashMessage: new FlashMessage('warning', 'Please login.') })
+            next({ path: '/login' })
+        }
+        else
+        {
+            next()
+        }
     }
     else
     {
