@@ -17,6 +17,12 @@
     import * as types from '@/store/mutation-types'
 
     export default {
+        props: {
+            timeout: {
+                type: Number,
+                default: 5000
+            },
+        },
         data: function() {
             return {}
         },
@@ -40,6 +46,10 @@
             unsetFlashMessage() {
                 this.$store.commit(types.UNSET_FLASH_MESSAGE)
             }
+        },
+        mounted() {
+            let vm = this
+            setTimeout(function() {vm.$store.commit(types.UNSET_FLASH_MESSAGE)}, vm.timeout)
         }
     }
 </script>

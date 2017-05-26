@@ -7,6 +7,7 @@ import AdminAddCourse from '@/components/AdminAddCourse'
 import AdminDashboard from '@/components/AdminDashboard'
 import AdminListCourses from '@/components/AdminListCourses'
 import store from '@/store'
+import * as types from '@/store/mutation-types'
 import firebase from 'firebase'
 import FlashMessage from '@/classes/FlashMessage'
 
@@ -49,16 +50,17 @@ const router = new Router({
         }
     ]
 })
+
 // protect authenicated content
 router.beforeEach((to, from, next) => {
+
     if(to.name == 'login')
     {
         firebase.auth().onAuthStateChanged(function(user) {
             // user has logged in
             if (user) {
-                store.commit('SET_FLASH_MESSAGE', { flashMessage: new FlashMessage('success', 'Welcome back ') })
+                store.commit(types.SET_FLASH_MESSAGE, { flashMessage: new FlashMessage('success', 'Welcome back ') })
                 next({ path: '/admin/dashboard' })
-
             }
         })
     }
@@ -72,7 +74,7 @@ router.beforeEach((to, from, next) => {
                 next()
             }
             else{
-                store.commit('SET_FLASH_MESSAGE', { flashMessage: new FlashMessage('info', 'Please enter your username and password to login.') })
+                store.commit(types.SET_FLASH_MESSAGE, { flashMessage: new FlashMessage('info', 'Please enter your username and password to login.') })
                 next({ path: '/login' })
             }
         })
