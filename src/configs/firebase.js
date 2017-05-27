@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Firebase from 'firebase'
+import firebase from 'firebase'
 import VueFire from 'vuefire'
 import { firebaseConfigs } from '@/.env'
 Vue.use(VueFire)
-export let fbApp = Firebase.initializeApp(firebaseConfigs)
-export let fbDatabase = fbApp.database()
+let firebaseDb = firebase.initializeApp(firebaseConfigs).database()
+export default firebaseDb

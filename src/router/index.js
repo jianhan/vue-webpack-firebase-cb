@@ -42,6 +42,11 @@ const router = new Router({
                     name: 'admin.add-course'
                 },
                 {
+                    path: 'add-course',
+                    component: AdminAddCourse,
+                    name: 'admin.add-course'
+                },
+                {
                     path: 'dashboard',
                     component: AdminDashboard,
                     name: 'admin.dashboard'

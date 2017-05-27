@@ -67,14 +67,10 @@
                             <router-link :to="{ name: 'admin.list-courses'}" active-class='active'>
                                 <i class="si si-badge"></i><span class="sidebar-mini-hide">List Courses</span>
                             </router-link>
-                            <ul>
-                                <li>
-                                    <a href="base_ui_grid.html">All Courses</a>
-                                </li>
-                                <li>
-                                    <a href="base_ui_typography.html">Add New Course</a>
-                                </li>
-                            </ul>
+                            <router-link :to="{ name: 'admin.add-course'}" active-class='active'>
+                                <i class="si si-plus"></i><span class="sidebar-mini-hide">Add Course</span>
+                            </router-link>
+
                         </li>
                     </ul>
                 </div>
